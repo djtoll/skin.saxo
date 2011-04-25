@@ -2,4 +2,4 @@
 
 - start for testing Performance on  the O2 Joggler, changed only one Music List View. Project Start 18.02.2011
 
-[B]
+[B] [B]Version 0.0.2[/B] - adding back MyVideo.xml, my Pictures.xml, Programs etc. [B] [B]Version 0.0.3[/B] - Bigger Player-Controls Buttons.  Background Transcodet to .jpg[B] [B]Version 0.0.4[/B] - add Header Button for PlayerControl Window[B] [B]Version 0.0.5[/B]- add Context Button and Page Up, Page Down @ List View.[B] [B]Version 0.0.7[/B] - add more Header Buttons - add Dialog window for volume[B]
