@@ -1,0 +1,1137 @@
+<window type="dialog" id="114">
+	<defaultcontrol always="true">603</defaultcontrol>
+
+
+	<!-- touch -->
+	<visible>Player.HasMedia + Window.IsActive(PlayerControls) + !Window.IsActive(Visualisation)</visible>
+	<!--  touch end -->
+	<!-- <visible>Player.HasMedia + Window.IsActive(PlayerControls) + !Window.IsActive(FullscreenVideo) + !Window.IsActive(Visualisation)</visible> -->
+	<coordinates>
+		<system>1</system>
+		<posx>592</posx>
+		<posy>388</posy>
+	</coordinates>
+
+	<controls>
+		<control type="group">
+			<posx>100</posx>
+			<posy>0</posy>
+			<animation effect="zoom" start="90" end="190-" center="auto">WindowOpen</animation>
+			<animation effect="zoom" start="190" end="190" center="auto">WindowClose</animation>
+			
+			<control type="image">
+				<posx>-100</posx>
+				<posy>-50</posy>
+				<width>690</width>
+				<height>430</height>
+				<texture>fanart.jpg</texture>				
+			</control>
+			<control type="image">
+				<posx>-100</posx>
+				<posy>-50</posy>
+				<width>690</width>
+				<height>430</height>
+				<texture>black-back.png</texture>
+				<!-- <colordiffuse>98FFFFFF</colordiffuse> -->
+			</control>
+			<control type="progress" id="6552">
+				<description>Progressbar</description>
+				<posx>40</posx>
+				<posy>30r</posy>
+				<width>120</width>
+				<height>14</height>
+				<info>Player.Progress</info>
+				<visible>[Player.HasMedia + !System.IdleTime(4)]</visible>
+			</control>
+			<control type="image">
+				<posx>5</posx>
+				<posy>156</posy>
+				<width>483</width>
+				<height>53</height>
+				<texture flipy="true" border="20,20,20,2">InfoMessagePanel.png</texture>
+			</control>
+			<control type="group" id="100">
+				<posx>25</posx>
+				<posy>162</posy>
+				<control type="button" id="600">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<texturefocus>OSDPrevTrackFO.png</texturefocus>
+					<texturenofocus>OSDPrevTrackNF.png</texturenofocus>
+					<onleft>608</onleft>
+					<onright>601</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>XBMC.PlayerControl(Previous)</onclick>
+				</control>
+				<control type="button" id="601">
+					<posx>40</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<texturefocus>OSDRewindFO.png</texturefocus>
+					<texturenofocus>OSDRewindNF.png</texturenofocus>
+					<onleft>600</onleft>
+					<onright>603</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>XBMC.PlayerControl(Rewind)</onclick>
+				</control>
+				<control type="togglebutton" id="603">
+					<posx>80</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<texturefocus>OSDPauseFO.png</texturefocus>
+					<texturenofocus>OSDPauseNF.png</texturenofocus>
+					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+					<alttexturefocus>OSDPlayFO.png</alttexturefocus>
+					<alttexturenofocus>OSDPlayNF.png</alttexturenofocus>
+					<onleft>601</onleft>
+					<onright>602</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>XBMC.PlayerControl(Play)</onclick>
+				</control>
+				<control type="button" id="602">
+					<posx>120</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<texturefocus>OSDStopFO.png</texturefocus>
+					<texturenofocus>OSDStopNF.png</texturenofocus>
+					<onleft>603</onleft>
+					<onright>604</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>down</onclick>
+					<onclick>XBMC.PlayerControl(Stop)</onclick>
+				</control>
+				<control type="button" id="604">
+					<posx>160</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<texturefocus>OSDForwardFO.png</texturefocus>
+					<texturenofocus>OSDForwardNF.png</texturenofocus>
+					<onleft>602</onleft>
+					<onright>605</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>XBMC.PlayerControl(Forward)</onclick>
+				</control>
+				<control type="button" id="605">
+					<posx>200</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<texturefocus>OSDNextTrackFO.png</texturefocus>
+					<texturenofocus>OSDNextTrackNF.png</texturenofocus>
+					<onleft>604</onleft>
+					<onright>606</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>XBMC.PlayerControl(Next)</onclick>
+				</control>
+				<control type="button" id="606">
+					<posx>240</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<texturefocus>OSDRecordFO-Red.png</texturefocus>
+					<texturenofocus>OSDRecordNF.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>609</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>XBMC.PlayerControl(record)</onclick>
+					<enable>Player.CanRecord</enable>
+					<animation effect="fade" start="100" end="30" time="100" condition="!Player.CanRecord">Conditional</animation>
+				</control>
+
+				<control type="button" id="609">
+					<posx>280</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<texturefocus>OSDAudioVoldownFO.png</texturefocus>
+					<texturenofocus>OSDAudioVoldownNF.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>VolumeDown</onclick>				
+				</control>
+				<control type="button" id="610">
+					<posx>320</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<texturefocus>OSDAudioFO.png</texturefocus>
+					<texturenofocus>OSDAudioNF.png</texturenofocus>
+					<onleft>609</onleft>
+					<onright>607</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>VolumeUp</onclick>				
+				</control>
+				<control type="button" id="607">
+					<posx>365</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<visible>!MusicPartyMode.Enabled</visible>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>XBMC.PlayerControl(Repeat)</onclick>
+					<onleft>610</onleft>
+					<onright>608</onright>
+					<onup>100</onup>
+					<ondown>100</ondown>
+				</control>
+				<control type="button" id="607">
+					<posx>365</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<texturefocus>OSDRepeatNF.png</texturefocus>
+					<texturenofocus>OSDRepeatNF.png</texturenofocus>
+					<visible>MusicPartyMode.Enabled</visible>					
+					<onclick>XBMC.PlayerControl(Repeat)</onclick>
+					<onleft>610</onleft>
+					<onright>608</onright>
+					<onup>100</onup>
+					<ondown>100</ondown>
+					<colordiffuse>ff444444</colordiffuse>
+				</control>
+				<control type="group">
+					<visible>!MusicPartyMode.Enabled</visible>
+					<control type="image">
+						<posx>365</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<height>40</height>
+						<texture>OSDRepeatNF.png</texture>
+						<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+						<visible>!Control.HasFocus(607) </visible>
+					</control>
+					<control type="image">
+						<posx>365</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<height>40</height>
+						<texture>OSDRepeatFO.png</texture>
+						<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+						<visible>Control.HasFocus(607)</visible>
+					</control>
+					<control type="image">
+						<posx>365</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<height>40</height>
+						<texture>OSDRepeatOneNF.png</texture>
+						<visible>Playlist.IsRepeatOne</visible>
+						<visible>!Control.HasFocus(607)</visible>
+					</control>
+					<control type="image">
+						<posx>365</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<height>40</height>
+						<texture>OSDRepeatOneFO.png</texture>
+						<visible>Playlist.IsRepeatOne</visible>
+						<visible>Control.HasFocus(607)</visible>
+					</control>
+					<control type="image">
+						<posx>365</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<height>40</height>
+						<texture>OSDRepeatAllNF.png</texture>
+						<visible>Playlist.IsRepeat</visible>
+						<visible>!Control.HasFocus(607)</visible>
+					</control>
+					<control type="image">
+						<posx>365</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<height>40</height>
+						<texture>OSDRepeatAllFO.png</texture>
+						<visible>Playlist.IsRepeat</visible>
+						<visible>Control.HasFocus(607)</visible>
+					</control>
+
+				</control>
+				<control type="togglebutton" id="608">
+					<posx>405</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<visible>!MusicPartyMode.Enabled</visible>
+					<texturefocus>OSDRandomOffFO.png</texturefocus>
+					<texturenofocus>OSDRandomOffNF.png</texturenofocus>
+					<usealttexture>Playlist.IsRandom</usealttexture>
+					<alttexturefocus>OSDRandomOnFO.png</alttexturefocus>
+					<alttexturenofocus>OSDRandomOnNF.png</alttexturenofocus>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>XBMC.PlayerControl(Random)</onclick>
+					<onleft>607</onleft>
+					<onright>600</onright>
+					<onup>100</onup>
+					<ondown>100</ondown>
+				</control>
+				<control type="togglebutton" id="608">
+					<posx>405</posx>
+					<posy>0</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<visible>MusicPartyMode.Enabled</visible>
+					<texturefocus>OSDRandomOffNF.png</texturefocus>
+					<texturenofocus>OSDRandomOffNF.png</texturenofocus>
+					<usealttexture>Playlist.IsRandom</usealttexture>
+					<alttexturefocus>OSDRandomOnFO.png</alttexturefocus>
+					<alttexturenofocus>OSDRandomOnNF.png</alttexturenofocus>					
+					<onclick>-</onclick>
+					<onleft>607</onleft>
+					<onright>600</onright>
+					<onup>100</onup>
+					<ondown>100</ondown>
+					<colordiffuse>ff444444</colordiffuse>
+				</control>
+				<control type="image">
+					<posx>198</posx>
+					<posy>45</posy>
+					<width>320</width>
+					<height>60</height>
+					<texture>headerx3.png</texture>
+				</control>
+			</control>
+			<control type="group" id="202">
+				<posx>396</posx>
+				<posy>214</posy>
+
+				<control type="button" id="800">
+					<posx>0</posx>
+					<posy>4</posy>
+					<width>30</width>
+					<height>30</height>
+					<label>$LOCALIZE[15200] $LOCALIZE[31001]</label>
+					<visible>LastFM.RadioPlaying</visible>
+					<align>right</align>
+					<font>-</font>
+					<textoffsetx>35</textoffsetx>
+					<textcolor>grey2</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<texturefocus>lastfm-love-focus.png</texturefocus>
+					<texturenofocus>lastfm-love-nofocus.png</texturenofocus>
+					<onleft>702</onleft>
+					<onright>801</onright>
+					<onup>602</onup>
+					<ondown>602</ondown>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>XBMC.LastFM.Love</onclick>
+				</control>
+				<control type="button" id="801">
+					<posx>40</posx>
+					<posy>4</posy>
+					<width>30</width>
+					<width>30</width>
+					<height>30</height>
+					<label>$LOCALIZE[15200] $LOCALIZE[31002]</label>
+					<visible>LastFM.RadioPlaying</visible>
+					<align>left</align>
+					<font>-</font>
+					<textoffsetx>35</textoffsetx>
+					<textcolor>grey2</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<texturefocus>lastfm-hate-focus.png</texturefocus>
+					<texturenofocus>lastfm-hate-nofocus.png</texturenofocus>
+					<onleft>800</onleft>
+					<onright>703</onright>
+					<onup>603</onup>
+					<ondown>603</ondown>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>XBMC.LastFM.Ban</onclick>
+				</control>
+				<control type="button">
+					<description>lyrics button</description>
+					<posx>68</posx>
+					<posy>-2</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<font>-</font>				
+					<texturefocus>OSDLyricsFO.png</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onclick>Dialog.Close(114,true)</onclick>
+					<onclick>XBMC.RunScript($INFO[Skin.String(LyricScript_Path)])</onclick>
+					<enable>Skin.HasSetting(LyricScript_Enable) + !IsEmpty(Skin.String(LyricScript_Path))</enable>
+					<animation effect="fade" start="100" end="50" time="100" condition="![Skin.HasSetting(LyricScript_Enable) + !IsEmpty(Skin.String(LyricScript_Path))]">Conditional</animation>
+				</control>
+				<control type="button" id="802">
+					<posx>-50</posx>
+					<posy>-2</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>10517</label>
+					<font>-</font>
+					<texturefocus>OSDPlaylistFO.png</texturefocus>
+					<texturenofocus>OSDPlaylistNF.png</texturenofocus>
+					<onleft>706</onleft>
+					<onright>500</onright>
+					<onup>600</onup>
+					<ondown>600</ondown>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>Dialog.Close(114,true)</onclick>
+					<!-- <onclick>PreviousMenu</onclick> -->
+					<onclick>ActivateWindow(MusicPlaylist)</onclick>				
+					<visible>Player.HasMusic</visible>
+				</control>
+				<control type="button" id="803">
+					<posx>-50</posx>
+					<posy>-2</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>10517</label>
+					<font>-</font>
+					<texturefocus>OSDPlaylistFO.png</texturefocus>
+					<texturenofocus>OSDPlaylistNF.png</texturenofocus>
+					<onleft>706</onleft>
+					<onright>500</onright>
+					<onup>600</onup>
+					<ondown>600</ondown>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>Dialog.Close(114,true)</onclick>
+					<!-- <onclick>PreviousMenu</onclick> -->
+					<onclick>ActivateWindow(VideoPlaylist)</onclick>					
+					<visible>Player.HasVideo</visible>					
+				</control>
+				<control type="button" id="804">
+					<posx>-90</posx>
+					<posy>-2</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<texturefocus>OSDSubtitlesFO.png</texturefocus>
+					<texturenofocus>OSDSubtitlesNF.png</texturenofocus>
+					<onleft>603</onleft>
+					<onright>600</onright>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<onclick>Dialog.Close(MusicOSD,true)</onclick>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>FullScreen</onclick>
+				</control>
+
+				<control type="button" id="805">
+					<posx>38</posx>
+					<posy>3</posy>
+					<width>30</width>					
+					<height>30</height>
+					<label>-</label>
+					<texturefocus>OSD-STEPForwardFO.png</texturefocus>
+					<texturenofocus>OSD-STEPForwardNF.png</texturenofocus>
+					<onleft>603</onleft>
+					<onright>600</onright>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<visible>!LastFM.RadioPlaying</visible>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>AnalogSeekForward</onclick>					
+				</control>
+				<control type="button" id="806">
+					<posx>2</posx>
+					<posy>3</posy>
+					<width>30</width>					
+					<height>30</height>
+					<label>-</label>
+					<texturefocus>OSD-STEPBackFO.png</texturefocus>
+					<texturenofocus>OSD-STEPBackNF.png</texturenofocus>
+					<onleft>603</onleft>
+					<onright>600</onright>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<visible>!LastFM.RadioPlaying</visible>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>AnalogSeekBack</onclick>					
+				</control>
+				<control type="button" id="807">
+					<posx>-131</posx>
+					<posy>-2</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<texturefocus>icon-mute-FO.png</texturefocus>
+					<texturenofocus>icon-mute-NF0.png</texturenofocus>
+					<onleft>609</onleft>
+					<onright>607</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<visible>Player.HasMedia</visible>
+					<onclick>Setfocus(1608)</onclick>
+					<onclick>Mute</onclick>				
+				</control>
+				<control type="togglebutton" id="808">
+					<posx>114</posx>
+					<posy>10</posy>
+					<width>40</width>
+					<height>40</height>
+					<label>-</label>
+					<visible>!System.IdleTime(8)</visible>
+					<onclick>Skin.ToggleSetting(Volume_Bar_visible_yes_no)</onclick>
+					<selected>!Skin.HasSetting(Volume_Bar_visible_yes_no)</selected>			
+					<texturefocus>OSDAudioVoldownFOpunkt.png</texturefocus>
+					<texturenofocus>OSDAudioVoldownNFpunkt.png</texturenofocus>
+					<!-- <usealttexture>Playlist.IsRandom</usealttexture> -->
+					<alttexturefocus>OSDAudioFOpunkt.png</alttexturefocus>
+					<alttexturenofocus>OSDAudioNFpunkt.png</alttexturenofocus>					
+				</control>
+			</control>
+			<!-- volume slider START -->
+			<control type="group">
+				<animation effect="rotate" start="0,0" end="90" center="auto" condition="true">Conditional</animation>
+				<animation effect="zoom" start="600" end="40" center="auto" condition="true">Conditional</animation>
+				<posx>130</posx>
+				<posy>-528</posy>
+				<visible>!System.IdleTime(8) + !Skin.HasSetting(Volume_Bar_visible_yes_no)</visible>
+				<control type="image">
+					<description>progress volume control BG</description>
+					<posx>280</posx>
+					<posy>156</posy>
+					<width>530</width>
+					<height>72</height>
+					<texture border="10,14,10,14">ScrollBarV.png</texture>										
+				</control>
+				<control type="progress">
+					<description>progress volume control</description>
+					<posx>280</posx>
+					<posy>156</posy>
+					<width>530</width>
+					<height>72</height>
+					<texturebg border="10,14,10,14">ScrollBarV.png</texturebg>
+					<lefttexture>-</lefttexture>
+					<midtexture border="10,14,10,14">ScrollBarV_bar_focus.png</midtexture>
+					<righttexture>-</righttexture>
+					<overlaytexture>-</overlaytexture>
+					<info>Player.Volume</info>					
+				</control>
+
+				<control type="button" id="699">
+					<posx>246</posx>
+					<posy>150</posy>
+					<width>30</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<onfocus>SetVolume(0)</onfocus>									
+				</control>
+				<control type="button" id="700">
+					<posx>276</posx>
+					<posy>150</posy>
+					<width>30</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(5)</onfocus>									
+				</control>
+				<control type="button" id="701">
+					<posx>308</posx>
+					<posy>150</posy>
+					<width>40</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(11)</onfocus>									
+				</control>
+				<control type="button" id="702">
+					<posx>348</posx>
+					<posy>150</posy>
+					<width>60</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(22)</onfocus>									
+				</control>
+				<control type="button" id="703">
+					<posx>408</posx>
+					<posy>150</posy>
+					<width>60</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(33)</onfocus>								
+				</control>
+				<control type="button" id="704">
+					<posx>468</posx>
+					<posy>150</posy>
+					<width>60</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(44)</onfocus>									
+				</control>
+				<control type="button" id="705">
+					<posx>528</posx>
+					<posy>150</posy>
+					<width>60</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(55)</onfocus>									
+				</control>
+				<control type="button" id="706">
+					<posx>588</posx>
+					<posy>150</posy>
+					<width>40</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(64)</onfocus>								
+				</control>
+				<control type="button" id="708">
+					<posx>628</posx>
+					<posy>150</posy>
+					<width>30</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(70)</onfocus>								
+				</control>
+				<control type="button" id="708">
+					<posx>658</posx>
+					<posy>150</posy>
+					<width>30</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(76)</onfocus>								
+				</control> 
+				<control type="button" id="709">
+					<posx>688</posx>
+					<posy>150</posy>
+					<width>30</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(82)</onfocus>								
+				</control>
+				<control type="button" id="710">
+					<posx>718</posx>
+					<posy>150</posy>
+					<width>30</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(88)</onfocus>								
+				</control>
+				<control type="button" id="711">
+					<posx>748</posx>
+					<posy>150</posy>
+					<width>20</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(92)</onfocus>								
+				</control>
+				<control type="button" id="712">
+					<posx>768</posx>
+					<posy>150</posy>
+					<width>20</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(95)</onfocus>								
+				</control>
+				<control type="button" id="713">
+					<posx>788</posx>
+					<posy>150</posy>
+					<width>10</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(97)</onfocus>								
+				</control>
+				<control type="button" id="714">
+					<posx>800</posx>
+					<posy>150</posy>
+					<width>16</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(100)</onfocus>								
+				</control>
+
+
+			</control>
+			<!-- volume slider END -->
+
+			<!-- seek slider -->
+			<control type="group" id="3620">
+				<posx>-290</posx> 
+				<posy>284</posy>
+				<visible>!System.IdleTime(8)</visible>			
+				<animation effect="fade" time="700">Visible</animation>
+				<animation effect="fade" time="700">Hidden</animation>
+				<!-- <animation effect="fade" time="700" condition="Skin.HasSetting(DauerhaftMusicSeekSlider)">Conditional</animation> -->			
+				<animation effect="fade" time="1000">WindowOpen</animation>	
+				<animation effect="fade" time="300">WindowClose</animation>
+				<control type="image" id="1719">				
+					<description>media info background image</description>
+					<posx>-200</posx> 
+					<posy>-120</posy> 
+					<width>1470</width>
+					<height>240</height>
+					<texture>HomeNowPlayingBack.png</texture>					
+					<visible>!LastFM.RadioPlaying</visible>
+					<animation effect="zoom" start="90" end="50" center="auto" time="350">WindowOpen</animation>
+					<animation effect="zoom" start="50" end="90" center="auto" time="420">WindowClose</animation>
+				</control>
+				<control type="image" id="1721">				
+					<description>media info background image</description>
+					<posx>0</posx> 
+					<posy>-5</posy> 
+					<width>1070</width>
+					<height>41</height>
+					<texture>MediaInfoBackUpper.png</texture>
+					<colordiffuse>99FFFFFF</colordiffuse>
+					<visible>!LastFM.RadioPlaying</visible>
+					<animation effect="zoom" start="90" end="50" center="auto" time="350">WindowOpen</animation>
+					<animation effect="zoom" start="50" end="90" center="auto" time="420">WindowClose</animation>
+				</control>
+				<control type="image" id="1729">				
+					<description>media info background image</description>
+					<posx>5</posx> 
+					<posy>1</posy> 
+					<width>1060</width>
+					<height>28</height>
+					<texture>seekslider_BG.png</texture>
+					<colordiffuse>90FFFFFF</colordiffuse>
+					<visible>!LastFM.RadioPlaying</visible>
+					<animation effect="zoom" start="90" end="50" center="auto" time="350">WindowOpen</animation>
+					<animation effect="zoom" start="50" end="90" center="auto" time="420">WindowClose</animation>
+				</control>
+				<control type="seekslider" id="725"> 
+					<description>Seek Slider</description> 
+					<posx>2</posx> 
+					<posy>2</posy> 
+					<width>1070</width>
+					<height>24</height>
+					<onup>702</onup>					
+					<ondown>26</ondown> 
+					<texturesliderbar>seekslider.png</texturesliderbar>
+					<textureslidernib>osd_slider_nib_video_seek1_nf.png</textureslidernib> 
+					<textureslidernibfocus>osd_slider_nib_video_seek3_nf.png</textureslidernibfocus>
+					<visible>!LastFM.RadioPlaying</visible>
+					<animation effect="zoom" start="90" end="50" center="auto" time="350">WindowOpen</animation>
+					<animation effect="zoom" start="50" end="90" center="auto" time="420">WindowClose</animation>
+				</control>					
+			</control>
+			<!-- seek slider -->
+
+
+
+
+
+
+
+			<!-- Music Info -->
+			<control type="image">
+				<description>gradient</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>500</width>
+				<height>165</height>
+				<colordiffuse>80FFFFFF</colordiffuse>
+				<!--	<visible>Window.IsVisible(home)</visible> -->
+				<texture border="20">OverlayDialogBackground.png</texture>
+			</control>
+			<control type="image">
+				<description>gradient</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>500</width>
+				<height>165</height>
+				<colordiffuse>DDFFFFFF</colordiffuse>
+				<texture border="20">OverlayDialogBackground.png</texture>
+			</control>
+			<control type="button">
+				<description>Close Window button</description>
+				<posx>422</posx>
+				<posy>7</posy>
+				<width>32</width>
+				<height>28</height>
+				<label>-</label>
+				<font>-</font>							
+				<texturefocus>close-windowFO.png</texturefocus>
+				<texturenofocus>close-window.png</texturenofocus>
+				<onleft>1</onleft>
+				<onright>1</onright>
+				<onup>1</onup>
+				<ondown>1</ondown>
+				<onclick>PreviousMenu</onclick>
+				<visible>system.getbool(input.enablemouse)</visible>
+			</control>
+			<!-- <control type="image" id="715">
+					<posx>527</posx>
+					<posy>84</posy>
+					<width>240</width>
+					<height>42</height>							
+					<texture border="15,0,0,0" flipx="false">speaker-volume-logo.png</texture>
+					<visible>!System.IdleTime(8)</visible>
+				</control> -->
+		</control>
+		<control type="group">
+			<!-- <include>SmallMusicInfo</include> -->
+			<visible>Player.HasAudio</visible>
+			<posx>-416</posx>
+			<posy>-300</posy>
+			<animation effect="slide" start="550,0" end="0,0" time="350">WindowOpen</animation>
+			<!-- <animation effect="slide" start="0,0" end="220,0" delay="0" time="420">WindowClose</animation> -->
+			<animation effect="fade" start="300" end="0" time="320">WindowClose</animation>
+			<control type="image">
+				<description>Cover image BG</description>
+				<posx>10</posx>
+				<posy>8</posy>
+				<width>200</width>
+				<height>198</height>
+				<texture>playercontrolcoverimageBG.png</texture>
+				<visible>!Skin.HasSetting(cdview)</visible>
+			</control>
+			<control type="image">
+				<description>Cover image thumb icon</description>
+				<posx>20</posx>
+				<posy>17</posy>
+				<width>180</width>
+				<height>181</height>
+				<texture>$INFO[MusicPlayer.Cover]</texture>
+				<visible>!Skin.HasSetting(cdview)</visible>
+			</control>
+			<control type="image">
+				<description>Cover image BG</description>
+				<posx>10</posx>
+				<posy>8</posy>
+				<width>200</width>
+				<height>198</height>
+				<texture>bg-brown.png</texture>
+				<visible>Skin.HasSetting(cdview)</visible>
+			</control>
+			<control type="image">
+				<description>Cover image thumb icon</description>
+				<posx>20</posx>
+				<posy>17</posy>
+				<width>180</width>
+				<height>181</height>
+				<texture background="true" diffuse="diffdvd.png">$INFO[MusicPlayer.Cover]</texture>				
+				<!-- <bordertexture>ThumbShadow.png</bordertexture> -->
+				<bordersize>-</bordersize>	
+				<visible>Skin.HasSetting(cdview)</visible>	
+			</control>
+			<control type="button">
+				<description>open big cover dialog</description>
+				<posx>20</posx>
+				<posy>17</posy>
+				<width>180</width>
+				<height>181</height>
+				<label>-</label>
+				<font>-</font>				
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>				
+				<onclick>ActivateWindow(1459)</onclick>				
+			</control>
+			<control type="image">
+				<description>separator image</description>
+				<posx>232</posx>
+				<posy>-20</posy>
+				<width>1</width>
+				<height>310</height>
+				<texture>separator2.png</texture>
+				<colordiffuse>66FFFFFF</colordiffuse>
+			</control>
+			<control type="group">			
+				<posx>84</posx>
+				<posy>20</posy>
+				<control type="fadelabel">
+					<description>Artist label</description>
+					<posx>160</posx>
+					<posy>8</posy>
+					<height>30</height>
+					<width>650</width>
+					<label>$INFO[MusicPlayer.Artist]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font24_title</font>
+					<textcolor>grey2</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="fadelabel">
+					<description>Title label</description>
+					<posx>160</posx>
+					<posy>43</posy>
+					<height>30</height>
+					<width>650</width>
+					<label>$INFO[MusicPlayer.Title]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font30_title</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<scrollout>false</scrollout>
+					<pauseatend>2000</pauseatend>
+				</control>
+				<control type="label">
+					<description>Time Label</description>                    
+					<posx>160</posx>
+					<posy>84</posy>
+					<height>30</height>
+					<width>650</width>
+					<label>$INFO[MusicPlayer.Time]$INFO[MusicPlayer.Duration, / ]      [COLOR=grey2][$INFO[musicplayer.TrackNumber]][/COLOR]          $INFO[musicplayer.Playlistposition,[COLOR=blue]Position:[/COLOR] ]$INFO[musicplayer.Playlistlength, / ]</label>  
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font23inch</font>
+					<textcolor>gray</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<posx>-196</posx>
+					<posy>428</posy>
+					<width>940</width>
+					<height>30</height>
+					<label>[UPPERCASE]$INFO[MusicPlayer.Genre][/UPPERCASE]</label>
+					<scroll>true</scroll>
+					<align>left</align>					
+					<font>font35c</font>
+					<textcolor>10FFFFFF</textcolor>
+					<shadowcolor>-</shadowcolor>
+				</control>
+				<control type="fadelabel">
+					<description>Album Label</description>
+					<posx>160</posx>
+					<posy>166</posy>
+					<height>30</height>
+					<width>650</width>
+					<label>$INFO[MusicPlayer.Album]$INFO[musicplayer.discnumber, - $LOCALIZE[427]:]       ($INFO[MusicPlayer.Year])</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font24caps</font>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="label">
+					<description>Next Label</description>
+					<posx>160</posx>
+					<posy>202</posy>
+					<height>30</height>
+					<width>650</width>
+					<label>[COLOR=blue]$LOCALIZE[209] :[/COLOR] $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]</label>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font13</font>
+					<textcolor>grey</textcolor>
+					<shadowcolor>black</shadowcolor>
+				</control>
+				<control type="image">
+					<description>Rating image</description>
+					<posx>160</posx>
+					<posy>122</posy>
+					<width>108</width>
+					<height>34</height>
+					<aspectratio align="left">keep</aspectratio>
+					<texture>LeftRating/$INFO[Player.StarRating]</texture>
+				</control>
+				<control type="image">
+					<description>Source Icon grooveshark</description>					
+					<posx>298</posx>
+					<posy>125</posy>
+					<width>164</width>
+					<height>24</height>												
+					<texture>$INFO[MusicPlayer,flagging/audio/grooveshark.png]</texture>
+					<visible>substring(Player.Filenameandpath,grooveshark)</visible>
+				</control>
+				<control type="image">
+					<description>Source Icon UpnP</description>					
+					<posx>298</posx>
+					<posy>125</posy>
+					<width>90</width>
+					<height>28</height>
+					<aspectratio>keep</aspectratio>												
+					<texture>$INFO[MusicPlayer,flagging/video/UpnP.png]</texture>
+					<visible>substring(Player.Filenameandpath,UpnP)</visible>
+				</control>
+				<control type="image">
+					<description>Source Icon playlist</description>					
+					<posx>298</posx>
+					<posy>125</posy>
+					<width>90</width>
+					<height>28</height>
+					<aspectratio>keep</aspectratio>												
+					<texture>$INFO[MusicPlayer,flagging/video/playlist.png]</texture>
+					<visible>substring(Player.Filenameandpath,playlists)</visible>
+				</control>
+				<control type="image">
+					<description>Source Icon wuala</description>			
+					<posx>328</posx>
+					<posy>122</posy>
+					<width>90</width>
+					<height>28</height>
+					<aspectratio>keep</aspectratio>					
+					<texture>$INFO[MusicPlayer,flagging/video/wualalogo.png]</texture>
+					<visible>substring(Player.Filenameandpath,myfiles) | substring(Player.Filenameandpath,myfriends) | substring(Player.Filenameandpath,mygroups)</visible>
+				</control>
+				<control type="image">
+					<description>Source Icon lastfm</description>			
+					<posx>298</posx>
+					<posy>108</posy>
+					<width>90</width>
+					<height>54</height>
+					<aspectratio>keep</aspectratio>
+					<colordiffuse>ffff0066</colordiffuse>					
+					<texture>$INFO[MusicPlayer,flagging/audio/lastfm.png]</texture>
+					<visible>substring(Player.Filenameandpath,lastfm)</visible>
+				</control>
+				<control type="image">
+					<description>Source Icon dell</description>			
+					<posx>328</posx>
+					<posy>122</posy>
+					<width>90</width>
+					<height>28</height>
+					<aspectratio>keep</aspectratio>					
+					<texture>$INFO[MusicPlayer,flagging/video/delllogo.png]</texture>  
+					<visible>substring(Player.Filenameandpath,DELLOPTIPLEX)</visible>
+				</control>
+				<control type="image">
+					<description>Source Icon dell</description>			
+					<posx>328</posx>
+					<posy>122</posy>
+					<width>90</width>
+					<height>28</height>
+					<aspectratio>keep</aspectratio>					
+					<texture>$INFO[MusicPlayer,flagging/video/asus.png]</texture>  
+					<visible>substring(Player.Filenameandpath,ASUS-NEU)</visible>
+				</control>
+				<control type="image">
+					<description>party Mode enabled</description>			
+					<posx>19</posx>
+					<posy>177</posy>
+					<width>32</width>
+					<height>82</height>
+					<aspectratio>keep</aspectratio>					
+					<texture>partymodus_nofocus.png</texture>  
+					<visible>MusicPartyMode.Enabled</visible>
+				</control>
+				<control type="button">
+					<description>fake rating button up</description>
+					<posx>220</posx>
+					<posy>116</posy>
+					<width>82</width>
+					<height>46</height>
+					<label>-</label>
+					<texturefocus>Rating-plus-FO.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>Setfocus(1608)</onclick>					
+					<onclick>IncreaseRating</onclick>
+				</control>
+				<control type="button">
+					<description>fake rating button down</description>
+					<posx>138</posx>
+					<posy>116</posy>
+					<width>82</width>
+					<height>46</height>
+					<label>-</label>
+					<texturefocus>Rating-minus-FO.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>Setfocus(1608)</onclick>					
+					<onclick>DecreaseRating</onclick>
+				</control>
+				<control type="button" id="1608">
+					<description>default fake button</description>
+					<posx>340r</posx>
+					<posy>240</posy>
+					<width>10</width>
+					<height>10</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<onclick>-</onclick>
+				</control>
+				<control type="image">
+					<posx>-70</posx>
+					<posy>201</posy>
+					<description>Codec Image</description>
+					<width>80</width>
+					<height>40</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[MusicPlayer.Codec,flagging/audio/,.png]</texture>
+				</control>
+				<control type="image">
+					<posx>56</posx>
+					<posy>201</posy>
+					<description>Channels Image</description>
+					<width>80</width>
+					<height>40</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[MusicPlayer.Channels,flagging/audio/,.png]</texture>
+				</control>
+			</control>
+
+		</control>
+
+		<!-- Video Info -->
+		<control type="group">
+			<posx>-416</posx>
+			<posy>-300</posy>
+			<animation effect="slide" start="550,0" end="0,0" time="350">WindowOpen</animation>			
+			<animation effect="fade" start="300" end="0" time="320">WindowClose</animation>
+			<visible>Player.HasVideo</visible>
+			<include>SmallVideoInfo</include>
+		</control>
+	</controls>
+</window>

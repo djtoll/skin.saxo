@@ -1,0 +1,5 @@
+[B]Version 0.0.1[/B]
+
+- start for testing Performance on  the O2 Joggler, changed only one Music List View. Project Start 18.02.2011
+
+[B]

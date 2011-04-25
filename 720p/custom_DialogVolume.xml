@@ -1,0 +1,371 @@
+<window type="dialog" id="1424">
+	<defaultcontrol always="true">610</defaultcontrol>
+	<!-- <include>Animation_Bartowski_Context_Zoom</include> -->
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	<controls>
+		<control type="image">			
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture border="20">black-back.png</texture>
+			<colordiffuse>AAFFFFFF</colordiffuse>
+			
+			<include>Window_OpenClose_Animation</include>
+		</control>
+		<control type="group">		
+			<posx>90</posx>
+			<posy>120</posy>
+			<!-- <animation effect="slide" start="1100,0" end="0,0" time="100" tween="quadratic" easing="out">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="1100,0" time="80" tween="quadratic" easing="out">WindowClose</animation> -->
+			<animation effect="zoom" start="20" end="100" center="auto" time="160">WindowOpen</animation>
+			<animation effect="zoom" start="100" end="20" center="auto" time="170">WindowClose</animation>
+			<control type="image">
+				<posx>200</posx>
+				<posy>60</posy>
+				<width>700</width>
+				<height>256</height>
+				<texture border="15,0,0,0" flipx="true">DialogMiddle.png</texture>
+			</control>
+			<control type="button">
+				<description>Close Window button</description>
+				<posx>830</posx>
+				<posy>82</posy>
+				<width>60</width>
+				<height>60</height>
+				<label>-</label>
+				<font>-</font>
+				<onclick>PreviousMenu</onclick>
+				<texturefocus>close-windowFO.png</texturefocus>
+				<texturenofocus>close-window.png</texturenofocus>				
+				<visible>system.getbool(input.enablemouse)</visible>
+			</control>			
+			<control type="button" id="1608">
+				<description>fake button</description>
+				<posx>340r</posx>
+				<posy>240</posy>
+				<width>10</width>
+				<height>10</height>
+				<label>-</label>
+				<texturefocus>-</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<onleft>605</onleft>
+				<onright>610</onright>
+				<onup>300</onup>
+				<ondown>200</ondown>
+				<onclick>-</onclick>
+			</control>
+			<control type="button" id="611">
+				<posx>750</posx>
+				<posy>82</posy>
+				<width>64</width>
+				<height>60</height>
+				<label>-</label>
+				<texturefocus>HeaderMuteFO.png</texturefocus>
+				<texturenofocus>HeaderMuteNF.png</texturenofocus>
+				<onleft>609</onleft>
+				<onright>607</onright>
+				<onup>300</onup>
+				<ondown>200</ondown>				
+				<onclick>Mute</onclick>
+				<onclick>Setfocus(1608)</onclick>
+			</control>
+			<!-- <control type="videowindow">
+				<posx>320r</posx>
+				<posy>150</posy>
+				<width>250</width>
+				<height>250</height>
+				<visible>Player.HasMedia + !Window.isVisible(0)</visible>
+			</control> 			
+			<control type="button" id="615">
+				<posx>158r</posx>
+				<posy>180</posy>
+				<width>100</width>
+				<height>100</height>
+				<label>-</label>
+				<texturefocus>Playlist-root-volume-video-fo.png</texturefocus>
+				<texturenofocus>Playlist-root-volume-video-nf.png</texturenofocus>
+				<onleft>609</onleft>
+				<onright>607</onright>
+				<onup>300</onup>
+				<ondown>200</ondown>				
+				<visible>Window.isVisible(0)</visible> 
+				<onclick>Dialog.Close(1424,true)</onclick>
+				<onclick>ActivateWindow(VideoPlaylist)</onclick>				
+			</control>
+			<control type="button" id="616">
+				<posx>310r</posx>
+				<posy>180</posy>
+				<width>100</width>
+				<height>100</height>
+				<label>-</label>
+				<texturefocus>Playlist-root-volume-music-fo.png</texturefocus>
+				<texturenofocus>Playlist-root-volume-music-nf.png</texturenofocus>
+				<onleft>609</onleft>
+				<onright>607</onright>
+				<onup>300</onup>
+				<ondown>200</ondown>				
+				<visible>Window.isVisible(0)</visible> 
+				<onclick>Dialog.Close(1424,true)</onclick>
+				<onclick>ActivateWindow(MusicPlaylist)</onclick>				
+			</control> -->			
+			<!-- <control type="image" id="619">
+				<description>separator</description>
+				<posx>380r</posx>
+				<posy>426</posy>
+				<width>400</width>
+				<height>4</height>
+				<texture>separator.png</texture>
+				<visible>!Window.isVisible(0)</visible> 
+			</control> -->
+			<control type="group">
+			<posy>25</posy>
+				<control type="progress">
+					<description>progress volume control</description>
+					<posx>1000r</posx>
+					<posy>156</posy>
+					<width>530</width>
+					<height>72</height>
+					<texturebg border="10,14,10,14">ScrollBarV.png</texturebg>
+					<lefttexture>-</lefttexture>
+					<midtexture border="10,14,10,14">ScrollBarV_bar_focus.png</midtexture>
+					<righttexture>-</righttexture>
+					<overlaytexture>-</overlaytexture>
+					<info>Player.Volume</info>
+					<visible>!Player.Seeking</visible> 
+				</control>
+				<control type="button" id="700">
+					<posx>246</posx>
+					<posy>150</posy>
+					<width>40</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<onfocus>SetVolume(0)</onfocus>									
+				</control>
+				<control type="button" id="701">
+					<posx>288</posx>
+					<posy>150</posy>
+					<width>60</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(11)</onfocus>									
+				</control>
+				<control type="button" id="702">
+					<posx>348</posx>
+					<posy>150</posy>
+					<width>60</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(22)</onfocus>									
+				</control>
+				<control type="button" id="703">
+					<posx>408</posx>
+					<posy>150</posy>
+					<width>60</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(33)</onfocus>								
+				</control>
+				<control type="button" id="704">
+					<posx>468</posx>
+					<posy>150</posy>
+					<width>60</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(44)</onfocus>									
+				</control>
+				<control type="button" id="705">
+					<posx>528</posx>
+					<posy>150</posy>
+					<width>60</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(55)</onfocus>									
+				</control>
+				<control type="button" id="706">
+					<posx>588</posx>
+					<posy>150</posy>
+					<width>40</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(64)</onfocus>								
+				</control>
+				<control type="button" id="708">
+					<posx>628</posx>
+					<posy>150</posy>
+					<width>30</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(70)</onfocus>								
+				</control>
+				<control type="button" id="708">
+					<posx>658</posx>
+					<posy>150</posy>
+					<width>30</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(76)</onfocus>								
+				</control> 
+				<control type="button" id="709">
+					<posx>688</posx>
+					<posy>150</posy>
+					<width>30</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(82)</onfocus>								
+				</control>
+				<control type="button" id="710">
+					<posx>718</posx>
+					<posy>150</posy>
+					<width>30</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(88)</onfocus>								
+				</control>
+				<control type="button" id="711">
+					<posx>748</posx>
+					<posy>150</posy>
+					<width>20</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(92)</onfocus>								
+				</control>
+				<control type="button" id="712">
+					<posx>768</posx>
+					<posy>150</posy>
+					<width>20</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(95)</onfocus>								
+				</control>
+				<control type="button" id="713">
+					<posx>788</posx>
+					<posy>150</posy>
+					<width>10</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(97)</onfocus>								
+				</control>
+				<control type="button" id="714">
+					<posx>800</posx>
+					<posy>150</posy>
+					<width>16</width>
+					<height>86</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>					
+					<onfocus>SetVolume(100)</onfocus>								
+				</control>
+				<control type="image" id="715">
+					<posx>210</posx>
+					<posy>89</posy>
+					<width>280</width>
+					<height>42</height>
+					<visible>!Player.Seeking</visible> 					
+					<texture border="15,0,0,0" flipx="false">speaker-volume-logo.png</texture>
+				</control>
+				<control type="label">
+					<description>Volume Label</description>
+					<posx>470</posx>
+					<posy>88</posy>
+					<label>VOLUME</label>
+					<font>font24caps</font>
+					<textcolor>grey2</textcolor>
+					<visible>!Window.IsVisible(MuteBug)</visible>
+					<visible>!Player.Seeking</visible> 
+					<align>right</align>					
+				</control>
+				<control type="label">
+					<description>SEEK Label</description>
+					<posx>435</posx>
+					<posy>89</posy>
+					<label>[UPPERCASE]$LOCALIZE[773][/UPPERCASE]</label>
+					<font>font24caps</font>
+					<textcolor>grey2</textcolor>					
+					<visible>Player.Seeking</visible> 
+					<align>right</align>					
+				</control>
+				<control type="label">
+					<description>Volume Label muted</description>
+					<posx>470</posx>
+					<posy>88</posy>
+					<label>VOLUME MUTED</label>
+					<font>font24caps</font>
+					<textcolor>ffff0000</textcolor>
+					<visible>Window.IsVisible(MuteBug)</visible>
+					<visible>!Player.Seeking</visible> 
+					<align>right</align>					
+				</control>
+				<control type="label">
+					<description>DB Label</description>
+					<posx>280</posx>
+					<posy>88</posy>
+					<info>Player.Volume</info>
+					<font>font24_title</font>
+					<textcolor>grey</textcolor>
+					<visible>!Player.Seeking</visible> 
+					<align>right</align>					
+				</control>
+				<control type="image" id="714">
+					<posx>210</posx>
+					<posy>89</posy>
+					<width>280</width>
+					<height>42</height>
+					<texture border="15,0,0,0" flipx="false">speaker-volume-logo-mute.png</texture> 
+					<visible>Window.IsVisible(MuteBug)</visible>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Window.isVisible(2005)</visible>
+			<posx>100</posx>
+			<posy>100</posy>
+			<animation effect="slide" start="1000,0" end="0,0" time="400" tween="quadratic" easing="out">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="1000,0" time="300" tween="quadratic" easing="out">WindowClose</animation>
+			<control type="image">
+				<posx>990r</posx>
+				<posy>70</posy>
+				<width>700</width>
+				<height>200</height>
+				<texture border="15,0,0,0" flipx="true">MediaInfoBackTouch.png</texture>
+				<colordiffuse>DAFFFFFF</colordiffuse>
+			</control>
+		</control>
+	</controls>
+</window>
