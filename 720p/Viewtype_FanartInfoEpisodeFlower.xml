@@ -1,0 +1,1654 @@
+<includes>
+	<include name="FanartInfoTvEpisodeFlower"> 
+		<control type="image">
+			<description>media info background image</description>
+			<posx>0</posx>
+			<posy>370r</posy>
+			<width>1280</width>
+			<height>370</height>
+			<texture>HomeNowPlayingBack.png</texture>
+			<colordiffuse>99FFFFFF</colordiffuse>
+			<visible>Control.IsVisible(783)</visible>
+		</control> 
+		<control type="image">
+			<description>media info background2 image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>Black-Back.png</texture>			
+			<visible>Control.IsVisible(783)</visible>
+		</control>
+		<control type="image">
+			<description>media info background2 image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>Backround2ViewAirBook.png</texture>
+			<colordiffuse>69FFFFFF</colordiffuse>
+			<visible>Control.IsVisible(783)</visible>
+		</control>
+		<control type="largeimage" id="7926"> 
+			<posx>38</posx> 
+			<posy>502</posy> 
+			<width>380</width>
+			<height>210</height> 
+			<bordertexture border="10">white3.png</bordertexture>
+			<texture background="true">$INFO[ListItem.Thumb]</texture>
+			<bordersize>1</bordersize>
+			<colordiffuse>FF666666</colordiffuse>				
+			<fadetime>100</fadetime> 
+			<aspectratio scalediffuse="false">stretch</aspectratio> 
+			<visible>!IsEmpty(Listitem.Episode) + Control.IsVisible(783) + Container.Content(Episodes)</visible>
+		</control>
+
+		<control type="group">
+			<visible>Control.IsVisible(783)</visible>
+			<!-- <visible>Control.IsVisible(783) + !System.IdleTime(3)</visible> -->
+			<include>VisibleFadeEffect</include>
+			<!-- <include>3D_CoverWheel</include> -->
+			<posx>20</posx>
+			<posy>410</posy>	
+			<control type="group">
+				<visible>Control.IsVisible(783)</visible>
+				<posx>-70</posx>
+				<posy>-76</posy>			
+				<control type="fixedlist" id="783">
+					<posx>110</posx>
+					<posy>-146</posy>
+					<width>354</width>
+					<height>398</height>
+					<onleft>783</onleft>
+					<onright>783</onright>
+					<onup>2</onup>
+					<ondown>2566</ondown>
+					<viewtype label="Fanart Air Book">list</viewtype>
+					<pagecontrol>2566</pagecontrol>
+					<scrolltime>250</scrolltime>
+					<!-- <focusposition>4</focusposition>
+				<movement>2</movement> -->
+					<orientation>horizontal</orientation>
+					<!-- <preloaditems>4</preloaditems> -->
+					<visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+					<itemlayout height="354" width="354">
+
+
+						<!-- <control type="image">							
+							<posx>2</posx>
+							<posy>20</posy>
+							<width>266</width>
+							<height>266</height>
+							<aspectratio>keep</aspectratio>
+							<bordertexture border="5">ThumbShadow.png</bordertexture>
+							<bordersize>4</bordersize>
+							<fadetime>200</fadetime>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+							<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>							
+						</control> -->
+						<!-- <control type="image">							
+							<posx>2</posx>
+							<posy>20</posy>
+							<width>266</width>
+							<height>266</height>
+							<aspectratio>stretch</aspectratio>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>4</bordersize>
+							<fadetime>200</fadetime>
+							<texture background="true">Backround2ViewAirBook.png</texture>
+							<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>							
+						</control> -->
+						<!-- <control type="image">							
+							<posx>2</posx>
+							<posy>20</posy>
+							<width>266</width>
+							<height>266</height>
+							<aspectratio>keep</aspectratio>
+							<bordertexture border="5">button-nofocus.png</bordertexture>
+							<bordersize>4</bordersize>
+							<fadetime>200</fadetime>
+							<texture background="true">$INFO[Container.SeasonThumb]</texture>
+							<visible>Container.Content(episodes)</visible>							
+						</control> -->
+
+
+					</itemlayout>
+					<focusedlayout height="354" width="354">
+
+
+
+						<control type="image">
+							<!-- <posx>-2</posx>
+							<posy>16</posy>
+							<width>340</width>
+							<height>340</height> -->
+							<posx>44</posx>
+							<posy>16</posy>
+							<width>248</width>
+							<height>340</height>
+							<aspectratio>stretch</aspectratio>
+							<bordertexture border="8">ThumbShadow.png</bordertexture>
+							<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+							<bordersize>14</bordersize>
+							<fadetime>200</fadetime>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="image">
+							<posx>44</posx>
+							<posy>16</posy>
+							<width>248</width>
+							<height>340</height>
+							<aspectratio>stretch</aspectratio>
+							<bordersize>14</bordersize>
+							<fadetime>200</fadetime>
+							<texture background="true">GlassOverlay.png</texture>
+							<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+							<!-- <colordiffuse>AAFFFFFF</colordiffuse> -->
+						</control>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						<!-- <control type="image">
+							<posx>-2</posx>
+							<posy>16</posy>
+							<width>280</width>
+							<height>280</height>
+							<aspectratio>stretch</aspectratio>
+							<bordertexture border="8">ThumbBorder.png</bordertexture>
+							<visible>Container.Content(tvshows) | Container.Content(seasons)</visible>
+							<bordersize>8</bordersize>
+							<fadetime>200</fadetime>
+							<texture background="true">Backround2ViewAirBook.png</texture>
+						</control> -->
+
+						<!-- <control type="image">
+							<posx>-2</posx>
+							<posy>16</posy>
+							<width>280</width>
+							<height>280</height>
+							<aspectratio>keep</aspectratio>
+							<bordertexture border="8">ThumbBorder.png</bordertexture>
+							<visible>Container.Content(episodes)</visible>
+							<bordersize>8</bordersize>
+							<fadetime>200</fadetime>
+							<info background="true">$INFO[Container.SeasonThumb]</info>
+							<texture background="true">$INFO[Container.SeasonThumb]</texture>
+						</control> -->
+						<!-- <control type="image">
+							<posx>180</posx>
+							<posy>358</posy>
+							<width>34</width>
+							<height>34</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$INFO[ListItem.Overlay]</texture>
+						</control> -->
+
+					</focusedlayout>
+				</control>
+			</control>
+			<!-- <control type="image">
+				<posx>38</posx>
+				<posy>-206</posy>
+				<width>340</width>
+				<height>340</height>
+				<aspectratio>keep</aspectratio>
+				<bordertexture border="8">ThumbShadow.png</bordertexture>
+				<visible>!IsEmpty(Container.SeasonThumb) + Control.IsVisible(783) + Container.Content(episodes)</visible>
+				<bordersize>14</bordersize>
+				<fadetime>100</fadetime>							
+				<texture background="true">$INFO[Container.SeasonThumb]</texture>
+			</control>
+			<control type="image">
+				<posx>38</posx>
+				<posy>-206</posy>
+				<width>340</width>
+				<height>340</height>
+				<aspectratio>keep</aspectratio>
+				<bordertexture border="8">ThumbShadow.png</bordertexture>
+				<visible>IsEmpty(Container.SeasonThumb) + Control.IsVisible(783) + Container.Content(episodes)</visible>
+				<bordersize>14</bordersize>
+				<fadetime>100</fadetime>							
+				<texture background="true">$INFO[ListItem.path]../folder.jpg</texture>
+			</control>
+			<control type="image">
+				<posx>38</posx>
+				<posy>-206</posy>
+				<width>340</width>
+				<height>340</height>
+				<aspectratio>keep</aspectratio>
+				<bordertexture border="8">ThumbShadow.png</bordertexture>
+				<visible>IsEmpty(Container.SeasonThumb) + Control.IsVisible(783) + Container.Content(episodes)</visible>
+				<bordersize>14</bordersize>
+				<fadetime>100</fadetime>							
+				<texture background="true">$INFO[ListItem.path]folder.jpg</texture>
+			</control> -->
+			<control type="group">
+				<!-- <animation effect="slide" start="-310,0" time="400" tween="quadratic" easing="out">VisibleChange</animation> -->
+				<control type="image">
+					<posx>84</posx>
+					<posy>-206</posy>
+					<width>248</width>
+					<height>340</height>
+					<aspectratio>stretch</aspectratio>
+					<bordertexture border="8">ThumbShadow.png</bordertexture>
+					<visible>!IsEmpty(Container.SeasonThumb) + Control.IsVisible(783) + Container.Content(episodes)</visible>
+					<bordersize>14</bordersize>
+					<fadetime>100</fadetime>							
+					<texture background="true">$INFO[Container.SeasonThumb]</texture>
+					<animation effect="fade" time="650">VisibleChange</animation>
+					<animation effect="fade" start="100" end="0" time="100" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+				</control>
+				<control type="image">
+					<posx>84</posx>
+					<posy>-206</posy>
+					<width>248</width>
+					<height>340</height>
+					<aspectratio>stretch</aspectratio>
+					<bordertexture border="8">ThumbShadow.png</bordertexture>
+					<visible>IsEmpty(Container.SeasonThumb) + Control.IsVisible(783) + Container.Content(episodes)</visible>
+					<bordersize>14</bordersize>
+					<fadetime>100</fadetime>							
+					<texture background="true">$INFO[ListItem.path]../folder.jpg</texture>
+					<animation effect="fade" time="650">VisibleChange</animation>
+					<animation effect="fade" start="100" end="0" time="100" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+				</control>
+				<control type="image">
+					<posx>84</posx>
+					<posy>-206</posy>
+					<width>248</width>
+					<height>340</height>
+					<aspectratio>stretch</aspectratio>
+					<bordertexture border="8">ThumbShadow.png</bordertexture>
+					<visible>IsEmpty(Container.SeasonThumb) + Control.IsVisible(783) + Container.Content(episodes)</visible>
+					<bordersize>14</bordersize>
+					<fadetime>100</fadetime>							
+					<texture background="true">$INFO[ListItem.path]folder.jpg</texture>
+					<animation effect="fade" time="650">VisibleChange</animation>
+					<animation effect="fade" start="100" end="0" time="100" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+				</control>
+
+				<control type="image">
+					<posx>84</posx>
+					<posy>-206</posy>
+					<width>248</width>
+					<height>340</height>
+					<aspectratio>stretch</aspectratio>
+					<fadetime>100</fadetime>
+					<bordersize>14</bordersize>	
+					<texture background="true">GlassOverlay.png</texture>
+					<visible>Container.Content(Episodes) + Control.IsVisible(783)</visible>
+					<!-- <colordiffuse>AAFFFFFF</colordiffuse> -->
+					<animation effect="fade" time="650">VisibleChange</animation>
+					<animation effect="fade" start="100" end="0" time="100" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+				</control>
+				<control type="image">
+					<posx>84</posx>
+					<posy>-206</posy>
+					<width>248</width>
+					<height>340</height>				
+					<!-- <aspectratio align="center">keep</aspectratio> -->
+					<aspectratio>stretch</aspectratio>
+					<fadetime>100</fadetime>					
+					<visible>Control.IsVisible(783) + !System.IdleTime(1)</visible>
+					<bordersize>14</bordersize>											
+					<texture background="true">addon_run_NF5.png</texture>
+					<animation effect="fade" time="650">VisibleChange</animation>
+					<animation effect="fade" start="100" end="0" time="100" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<!-- <animation effect="slide" start="400,0" end="0,0" time="460" tween="quadratic" easing="out" condition="Container.OnNext">focus</animation> -->
+				</control>
+			</control>
+
+
+
+			<!-- <control type="image">
+				<posx>85</posx>
+				<posy>-206</posy>
+				<width>248</width>
+				<height>340</height>				
+				<aspectratio align="center">keep</aspectratio>				
+				<visible>Control.IsVisible(783) + System.IdleTime(1)</visible>
+				<bordersize>14</bordersize>											
+				<texture background="true">Backround3ViewAirBook.png</texture>
+				<animation effect="fade" time="550">VisibleChange</animation>
+				<animation effect="fade" start="100" end="0" time="100" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+			</control> -->
+			<!-- <control type="label">
+				<posx>108</posx> 
+				<posy>126</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>grey3</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey2]Status:[/COLOR]</label>
+				<visible>Control.IsVisible(783) + [Container.Content(Episodes) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+			</control> -->
+			<!-- <control type="image">
+				<posx>294</posx> 
+				<posy>-213</posy> 
+				<width>34</width>
+				<height>34</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[ListItem.Overlay]</texture>
+				<visible>Control.IsVisible(783) + [Container.Content(Episodes) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+			</control> --> 
+			<control type="image">
+				<posx>265</posx> 
+				<posy>-193</posy> 
+				<width>54</width>
+				<height>54</height>
+				<aspectratio>keep</aspectratio>
+				<fadetime>100</fadetime>
+				<texture background="true">showcase/OverlayWatched.png</texture>
+				<visible>StringCompare(ListItem.Overlay,OverlayWatched.png) + Control.IsVisible(783) + [Container.Content(Episodes) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+			</control>  
+
+			<control type="label">
+				<posx>430</posx>
+				<posy>-298</posy>
+				<width>790</width>
+				<height>30</height>
+				<font>font35_title</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>				
+				<label>[UPPERCASE][B]$INFO[ListItem.TVShowTitle][/UPPERCASE][/B]</label>
+				<visible>!IsEmpty(ListItem.TVShowTitle) + Control.IsVisible(783) + Container.Content(TVShows)</visible>
+
+			</control>
+			<control type="label">
+				<posx>430</posx>
+				<posy>-298</posy>
+				<width>790</width>
+				<height>30</height>
+				<font>font35_title</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B][UPPERCASE]$INFO[ListItem.label][/UPPERCASE][/B]</label>
+				<!-- <label>[B][UPPERCASE]Season $INFO[ListItem.Season][/UPPERCASE][/B] - $INFO[ListItem.TVShowTitle]</label> -->
+				<visible>!IsEmpty(ListItem.label) + Control.IsVisible(783) + Container.Content(Seasons)</visible>
+			</control>
+			<control type="label">
+				<posx>430</posx>
+				<posy>-298</posy>
+				<width>790</width>
+				<height>30</height>
+				<font>screensaverlabeltwo</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[B]$INFO[ListItem.label][/B]</label>
+				<!-- <label>[UPPERCASE][B]$INFO[ListItem.TVShowTitle] - [/UPPERCASE][/B]$INFO[Listitem.Label]</label> -->
+				<visible>!IsEmpty(ListItem.Label) + Control.IsVisible(783) + Container.Content(Episodes)</visible>
+				<!-- <visible>Control.IsVisible(783) + [Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos) | Container.Content(TVShows) | Container.Content(Albums)]</visible> -->
+			</control>
+
+			<!-- <control type="label">
+				<posx>108</posx>
+				<posy>172</posy>
+				<width>1180</width>
+				<height>30</height>
+				<font>font30</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+				<visible>![Container.Content(Movies) | Container.Content(Episodes) | Container.Content(MusicVideos) | Container.Content(TVShows) | Container.Content(Albums)]</visible>
+			</control> -->
+			<control type="image" id="1721">				
+				<description>separator</description>
+				<posx>431</posx> 
+				<posy>-254</posy> 
+				<width>766</width>
+				<height>1</height>
+				<texture>grey.png</texture>
+				<colordiffuse>80FFFFFF</colordiffuse>
+				<visible>Control.IsVisible(783)</visible>
+			</control>
+
+			<control type="label">
+				<posx>431</posx> 
+				<posy>-242</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey]Plot:[/COLOR]</label>
+				<visible>!IsEmpty(ListItem.Title) + Control.IsVisible(783) + Container.Content(TVShows)</visible>
+			</control>
+			<control type="label">
+				<posx>431</posx> 
+				<posy>-242</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey]Info:[/COLOR]</label>
+				<visible>IsEmpty(ListItem.Title) + Control.IsVisible(783) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+			</control>
+			<control type="label">
+				<posx>431</posx> 
+				<posy>-208</posy> 
+				<width>766</width>
+				<height>40</height>
+				<font>font12C</font>
+				<textcolor>grey6</textcolor>
+				<shadowcolor>-</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>Please select the BACK, NEXT, LAST or the Buttons at the bottom.</label>
+				<visible>IsEmpty(ListItem.Title) + Control.IsVisible(783) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]</visible>
+			</control>
+			<control type="textbox">
+				<posx>431</posx> 
+				<posy>-208</posy> 
+				<width>766</width>
+				<height>202</height>
+				<font>font12C</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<autoscroll time="3000" delay="16000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+				<align>left</align>				
+				<label>$INFO[ListItem.plot]</label>
+				<visible>Control.IsVisible(783) + Container.Content(TVShows)</visible>
+			</control>
+
+			<control type="label">
+				<posx>431</posx> 
+				<posy>-124</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey]Plot:[/COLOR]</label>
+				<visible>!IsEmpty(ListItem.Title) + Control.IsVisible(783) + Container.Content(Seasons)</visible>
+			</control>
+			<control type="textbox">
+				<posx>431</posx> 
+				<posy>-86</posy> 
+				<width>766</width>
+				<height>184</height>
+				<font>font12C</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<autoscroll time="3000" delay="16000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+				<align>left</align>				
+				<info>Container.ShowPlot</info>
+				<visible>!IsEmpty(ListItem.Title) + Control.IsVisible(783) + Container.Content(Seasons)</visible>
+			</control>
+			<control type="label">
+				<posx>431</posx> 
+				<posy>10</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey2]Year:[/COLOR]  $INFO[ListItem.Year]</label>
+				<visible>!IsEmpty(ListItem.Title) + Control.IsVisible(783) + Container.Content(TVShows)</visible>
+			</control>
+			<control type="label">
+				<posx>431</posx> 
+				<posy>40</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey2]MPAA:[/COLOR]  $INFO[ListItem.MPAA]</label>
+				<visible>!IsEmpty(ListItem.Title) + Control.IsVisible(783) + Container.Content(TVShows)</visible> 
+			</control>
+			<control type="label">
+				<posx>431</posx> 
+				<posy>70</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey2]Genre:[/COLOR]  $INFO[ListItem.Genre]</label>
+				<visible>!IsEmpty(ListItem.Title) + Control.IsVisible(783) + Container.Content(TVShows)</visible>  
+			</control>
+			<control type="label">
+				<posx>431</posx> 
+				<posy>100</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey2]Studio:[/COLOR]  $INFO[ListItem.Studio]</label>
+				<visible>!IsEmpty(ListItem.Title) + Control.IsVisible(783) + Container.Content(TVShows)</visible>  
+			</control>
+			<control type="label">
+				<posx>431</posx> 
+				<posy>130</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey2]Seasons:[/COLOR]  $INFO[ListItem.Property(TotalSeasons)]   [COLOR=grey2]Watched:[/COLOR]  $INFO[ListItem.Property(WatchedEpisodes)]  [COLOR=grey2]Unwatched:[/COLOR]  $INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+				<visible>!IsEmpty(ListItem.Title) + Control.IsVisible(783) + Container.Content(TVShows)</visible>  
+			</control>
+			<control type="group">
+				<visible>Control.IsVisible(783)</visible>
+				<posy>46</posy>
+				<posx>998</posx>				
+				<control type="largeimage" id="7915"> 
+					<posx>40</posx> 
+					<posy>54</posy> 
+					<width>160</width> 
+					<height>60</height> 
+					<texture>$INFO[ListItem.path]logo.png</texture> 
+					<fadetime>-</fadetime> 
+					<aspectratio scalediffuse="false">stretch</aspectratio> 
+					<visible>[Control.IsVisible(783) + !Window.IsVisible(VideoFiles)] + Container.Content(TVShows)</visible> 
+				</control>
+				<control type="largeimage" id="7916"> 
+					<posx>40</posx> 
+					<posy>54</posy> 
+					<width>160</width> 
+					<height>60</height> 
+					<texture>$INFO[ListItem.path]logo.png</texture> 
+					<fadetime>-</fadetime> 
+					<aspectratio scalediffuse="false">stretch</aspectratio> 
+					<visible>[Control.IsVisible(783) + !Window.IsVisible(VideoFiles)] + Container.Content(Seasons)</visible> 
+				</control>
+				<control type="largeimage" id="7914"> 
+					<posx>40</posx> 
+					<posy>-369</posy> 
+					<width>160</width> 
+					<height>60</height> 
+					<texture>$INFO[ListItem.path]logo.png</texture> 
+					<fadetime>-</fadetime> 
+					<aspectratio scalediffuse="false">stretch</aspectratio> 
+					<visible>[Control.IsVisible(783) + !Window.IsVisible(VideoFiles)] + Container.Content(Episodes) + !IsEmpty(Container.SeasonThumb)</visible> 
+				</control>
+				<control type="largeimage" id="7917"> 
+					<posx>40</posx> 
+					<posy>-369</posy> 
+					<width>160</width> 
+					<height>60</height> 
+					<texture>$INFO[ListItem.path]../logo.png</texture> 
+					<fadetime>-</fadetime> 
+					<aspectratio scalediffuse="false">stretch</aspectratio> 
+					<visible>[Control.IsVisible(783) + !Window.IsVisible(VideoFiles)] + Container.Content(Episodes) + !IsEmpty(Container.SeasonThumb)</visible>
+				</control>
+				<control type="largeimage" id="7914"> 
+					<posx>65</posx> 
+					<posy>-402</posy> 
+					<width>138</width> 
+					<height>50</height> 
+					<texture>$INFO[ListItem.path]logo.png</texture> 
+					<fadetime>-</fadetime> 
+					<aspectratio scalediffuse="false">stretch</aspectratio> 
+					<visible>[Control.IsVisible(783) + !Window.IsVisible(VideoFiles)] + Container.Content(Episodes) + IsEmpty(Container.SeasonThumb)</visible> 
+				</control>
+				<control type="largeimage" id="7917"> 
+					<posx>65</posx> 
+					<posy>-402</posy> 
+					<width>138</width> 
+					<height>50</height> 
+					<texture>$INFO[ListItem.path]../logo.png</texture> 
+					<fadetime>-</fadetime> 
+					<aspectratio scalediffuse="false">stretch</aspectratio> 
+					<visible>[Control.IsVisible(783) + !Window.IsVisible(VideoFiles)] + Container.Content(Episodes) + IsEmpty(Container.SeasonThumb)</visible>
+				</control>
+			</control>
+			<control type="label">
+				<posx>431</posx> 
+				<posy>-240</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey]Available Episodes: [/COLOR] $INFO[ListItem.Property(TotalEpisodes)]</label>
+				<visible>!IsEmpty(ListItem.Property(TotalEpisodes)) + Control.IsVisible(783) + Container.Content(Seasons)</visible>
+			</control>
+			<control type="label">
+				<posx>431</posx> 
+				<posy>-207</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey]Watched Episodes: [/COLOR] $INFO[ListItem.Property(WatchedEpisodes)]</label>
+				<visible>!IsEmpty(ListItem.Property(WatchedEpisodes)) + Control.IsVisible(783) + Container.Content(Seasons)</visible>
+			</control>
+			<control type="label">
+				<posx>431</posx> 
+				<posy>-174</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey]Unwatched Episodes: [/COLOR] $INFO[ListItem.Property(UnWatchedEpisodes)]</label>
+				<visible>!IsEmpty(ListItem.Property(UnWatchedEpisodes)) + Control.IsVisible(783) + Container.Content(Seasons)</visible>
+			</control>
+			<!-- <control type="label">
+				<posx>431</posx> 
+				<posy>-150</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey2]Unwatched Episodes: [/COLOR] $INFO[ListItem.PlotOutline]</label>
+				<visible>Control.IsVisible(783) + Container.Content(Seasons)</visible>
+			</control> -->
+			<control type="label">
+				<posx>1190</posx> 
+				<posy>20</posy> 
+				<width>766</width>
+				<height>186</height>
+				<font>EpisodeNRAirBook</font>
+				<textcolor>80808080</textcolor>
+				<shadowcolor>-</shadowcolor>
+				<scroll>true</scroll>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Episode]</label>
+				<visible>!IsEmpty(Listitem.Episode) + Control.IsVisible(783) + Container.Content(Episodes)</visible>
+			</control>
+
+			<control type="label">
+				<posx>431</posx> 
+				<posy>-246</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey]Season:[/COLOR]  $INFO[Listitem.Season]   -  [COLOR=grey]Episode:[/COLOR]  $INFO[ListItem.Episode]</label>
+				<visible>!IsEmpty(Listitem.Season) + !IsEmpty(Listitem.Episode) + Control.IsVisible(783) + Container.Content(Episodes)</visible>
+			</control>
+
+			<control type="textbox">
+				<posx>431</posx> 
+				<posy>-208</posy> 
+				<width>766</width>
+				<height>180</height>
+				<font>font12C</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<autoscroll time="3000" delay="16000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+				<align>left</align>				
+				<label>$INFO[ListItem.plot]</label>
+				<visible>Control.IsVisible(783) + Container.Content(Episodes)</visible>
+			</control>
+			<control type="label">
+				<posx>431</posx> 
+				<posy>24</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey2]Aired:[/COLOR]  $INFO[ListItem.Premiered]</label>
+				<visible>!IsEmpty(Listitem.Premiered) + Control.IsVisible(783) + Container.Content(Episodes)</visible>
+			</control>
+			<control type="label">
+				<posx>431</posx> 
+				<posy>84</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey2]Director:[/COLOR]  $INFO[ListItem.Director]</label>
+				<visible>!IsEmpty(Listitem.Director) + Control.IsVisible(783) + Container.Content(Episodes)</visible>
+			</control>
+			<control type="label">
+				<posx>431</posx> 
+				<posy>54</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey2]Writer:[/COLOR]  $INFO[ListItem.Writer]</label>
+				<visible>!IsEmpty(Listitem.Writer) + Control.IsVisible(783) + Container.Content(Episodes)</visible>
+			</control>
+			<control type="label">
+				<posx>431</posx> 
+				<posy>114</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>screensaverlabeldrei</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[COLOR=grey2]Rating:[/COLOR]  $INFO[ListItem.Rating]</label>
+				<visible>!IsEmpty(Listitem.Rating) + Control.IsVisible(783) + Container.Content(Episodes)</visible>
+			</control>
+			<control type="image" id="1726">				
+				<description>StarRating</description>
+				<posx>1002</posx> 
+				<posy>-248</posy> 
+				<width>200</width>
+				<height>28</height>					
+				<aspectratio align="right">keep</aspectratio>
+				<texture>LeftRating/$INFO[ListItem.StarRating]</texture>
+				<visible>Control.IsVisible(783) + Container.Content(Episodes)</visible>
+			</control>
+			<!-- <control type="image" id="1727">				
+				<description>StarRating</description>
+				<posx>470</posx> 
+				<posy>120</posy> 
+				<width>200</width>
+				<height>28</height>				
+				<aspectratio align="right">keep</aspectratio>
+				<texture>LeftRating/$INFO[ListItem.StarRating]</texture>
+				<visible>Control.IsVisible(783) + Container.Content(Episodes)</visible>
+			</control> -->
+			<control type="image" id="1728">				
+				<description>StarRating</description>
+				<posx>1000</posx> 
+				<posy>-248</posy> 
+				<width>200</width>
+				<height>28</height>				
+				<aspectratio align="right">keep</aspectratio>
+				<texture>leftRating/$INFO[ListItem.StarRating]</texture>
+				<visible>Control.IsVisible(783) + Container.Content(TVShows)</visible>
+			</control>			
+			<control type="image" id="1729">				
+				<description>StarRating</description>
+				<posx>1000</posx> 
+				<posy>-248</posy> 
+				<width>200</width>
+				<height>28</height>				
+				<aspectratio align="right">keep</aspectratio>
+				<texture>LeftRating/$INFO[ListItem.StarRating]</texture>
+				<visible>Control.IsVisible(783) + Container.Content(Seasons)</visible>
+			</control>
+			<control type="label">
+				<posx>280</posx> 
+				<posy>-248</posy> 
+				<width>766</width>
+				<height>36</height>
+				<font>EpisodeMinutesAirBook</font>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<scroll>true</scroll>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>[COLOR=white]$INFO[ListItem.Duration][/COLOR] [COLOR=grey]Minutes[/COLOR]</label>
+				<visible>!IsEmpty(Listitem.Duration) + Control.IsVisible(783) + Container.Content(Episodes)</visible>
+			</control>
+			<!-- <control type="textbox">
+				<description>textarea</description>
+				<posx>265</posx>
+				<posy>577</posy>
+				<width>975</width>
+				<height>105</height>
+				<label>$INFO[ListItem.Property(Addon.Description)]</label>
+				<font>font-19</font>
+				<align>justify</align>
+				<textcolor>white</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<pagecontrol>60</pagecontrol>
+				<autoscroll time="3000" delay="16000" repeat="5000">Skin.HasSetting(AutoScroll)</autoscroll>
+			</control> -->
+			<control type="image" id="1722">				
+				<description>separator</description>
+				<posx>431</posx> 
+				<posy>169</posy> 
+				<width>766</width>
+				<height>1</height>
+				<texture>grey.png</texture>
+				<colordiffuse>80FFFFFF</colordiffuse>
+				<visible>Control.IsVisible(783)</visible>
+			</control>
+			<!-- <control type="button">  
+				<posx>220</posx>
+				<posy>-180</posy>
+				<width>80</width>
+				<height>80</height>
+				<label>-</label>
+				<font>-</font>
+				<texturefocus>info-icon-context-FO2.png</texturefocus>
+				<texturenofocus>blank.png</texturenofocus>						
+				<onclick>ContextMenu</onclick>
+				<onclick>Setfocus(1608)</onclick>
+				<visible>Control.IsVisible(783)</visible>
+			</control> -->
+			<control type="group">
+				<posx>496</posx> 
+				<posy>114</posy>
+				<animation effect="zoom" start="100" end="76" center="auto" time="200" condition="control.IsVisible(783)">Visble</animation>
+				<control type="grouplist">
+					<description>Media Codec Flagging Images</description>
+					<visible>Control.IsVisible(783)</visible>
+					<posx>-218</posx>
+					<posy>-262</posy>
+					<width>1280</width>
+					<align>left</align>
+					<itemgap>0</itemgap>
+					<orientation>horizontal</orientation>
+					<include>VideoCodecFlaggingConditions</include>
+					<include>AudioCodecFlaggingConditions</include>		
+					<include>AudioCodecChannelsConditions</include>
+					<include>AspectCodecFlaggingConditions</include>
+					<include>VideoTypeHackFlaggingConditions</include>
+					<include>VideoMPAAFlaggingConditionsDEsmall2</include>
+					<include>VideoMPAAFlaggingConditionsUS</include>
+					<include>StudioFlaggingConditions</include>
+					<include>AudioLanguageFlaggingConditions</include>
+					<visible>Control.IsVisible(783) + Container.Content(Episodes)</visible>
+				</control>
+				<control type="grouplist">
+					<description>Media Codec Flagging Images</description>
+					<visible>Control.IsVisible(783)</visible>
+					<posx>-466</posx>
+					<posy>-214</posy>
+					<width>1280</width>
+					<align>right</align>
+					<itemgap>0</itemgap>
+					<orientation>horizontal</orientation>
+					<include>VideoCodecFlaggingConditions</include>
+					<include>AudioCodecFlaggingConditions</include>
+					<include>AspectCodecFlaggingConditions</include>
+					<include>VideoTypeHackFlaggingConditions</include>
+					<include>VideoMPAAFlaggingConditionsDEsmall2</include>
+					<include>VideoMPAAFlaggingConditionsUS</include>
+					<include>StudioFlaggingConditions</include>
+					<include>AudioLanguageFlaggingConditions</include>
+					<visible>Control.IsVisible(783) + Container.Content(TVShows)</visible>
+				</control>
+				<control type="grouplist">
+					<description>Media Codec Flagging Images</description>
+					<visible>Control.IsVisible(783)</visible>
+					<posx>-562</posx>
+					<posy>-78</posy>
+					<width>1280</width>
+					<align>left</align>
+					<itemgap>0</itemgap>
+					<orientation>horizontal</orientation>
+					<include>VideoCodecFlaggingConditions</include>
+					<include>AudioCodecFlaggingConditions</include>
+					<include>AspectCodecFlaggingConditions</include>
+					<include>VideoTypeHackFlaggingConditions</include>
+					<include>VideoMPAAFlaggingConditionsDEsmall2</include>
+					<include>VideoMPAAFlaggingConditionsUS</include>
+					<include>StudioFlaggingConditions</include>
+					<include>AudioLanguageFlaggingConditions</include>
+					<visible>Control.IsVisible(783) + Container.Content(Seasons)</visible>
+				</control>
+			</control>
+			<control type="scrollbar" id="2566">
+				<posx>420</posx>
+				<posy>224</posy>
+				<width>600</width>
+				<height>66</height>
+				<texturesliderbackground border="14,10,14,10">xxScrollBarH.png</texturesliderbackground>
+				<texturesliderbar border="14,10,14,10">xxScrollBarH_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="14,10,14,10">xxScrollBarH_bar_focus.png</texturesliderbarfocus>
+				<textureslidernib>xxScrollBarNib.png</textureslidernib>
+				<textureslidernibfocus>xxScrollBarNib.png</textureslidernibfocus>
+				<onleft>783</onleft>
+				<onright>2</onright>
+				<showonepage>false</showonepage>
+				<orientation>horizontal</orientation>
+				<visible>Control.IsVisible(783)</visible>
+
+			</control>
+			<!-- <control type="scrollbar" id="2566">
+				<posx>100</posx>
+				<posy>198</posy>
+				<width>1000</width>
+				<height>118</height>
+				<texturesliderbackground border="14,10,14,10">xxxxScrollBarH.png</texturesliderbackground>
+				<texturesliderbar border="14,10,14,10">xxxxScrollBarH_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="14,10,14,10">xxxxScrollBarH_bar_focus.png</texturesliderbarfocus>
+				<textureslidernib>xxxxScrollBarNib.png</textureslidernib>
+				<textureslidernibfocus>xxxxScrollBarNib.png</textureslidernibfocus>
+				<onup>50</onup>
+				<ondown>9000</ondown>
+				<showonepage>true</showonepage>
+				<orientation>horizontal</orientation>
+				<visible>Control.IsVisible(783) + Skin.HasSetting(scrollbarvisibile3dwrap)</visible>
+			</control> -->
+			<!-- <control type="button" id="88804">
+				<posx>34</posx>
+				<posy>218</posy>
+				<width>40</width>
+				<height>40</height>
+				<label>-</label>
+				<font>-</font>
+				<texturefocus>radiobutton-nofocus.png</texturefocus>
+				<texturenofocus>radiobutton-nofocus.png</texturenofocus>
+				<onleft>706</onleft>
+				<onright>500</onright>
+				<onup>600</onup>
+				<ondown>600</ondown>
+				<onclick>Skin.ToggleSetting(scrollbarvisibile3dwrap)</onclick>
+				<visible>Control.IsVisible(783) + Skin.HasSetting(scrollbarvisibile3dwrap)</visible> 
+			</control>
+			<control type="button" id="88805">
+				<posx>34</posx>
+				<posy>218</posy>
+				<width>40</width>
+				<height>40</height>
+				<label>-</label>
+				<font>-</font>
+				<texturefocus>radiobutton-focus.png</texturefocus>
+				<texturenofocus>radiobutton-focus.png</texturenofocus>
+				<onleft>706</onleft>
+				<onright>500</onright>
+				<onup>600</onup>
+				<ondown>600</ondown>
+				<onclick>Skin.ToggleSetting(scrollbarvisibile3dwrap)</onclick>
+				<visible>Control.IsVisible(783) + !Skin.HasSetting(scrollbarvisibile3dwrap)</visible> 
+			</control> -->
+			<!-- touch start-->
+			<control type="group">
+				<posx>-430</posx>
+				<posy>33</posy>
+
+				<!-- <control type="image">
+					<posx>576</posx>
+					<posy>-68</posy>
+					<width>140</width>
+					<height>66</height>
+					<aspectratio>stretch</aspectratio>
+					<bordertexture border="5" diffuse="diffuse_mirror2.png">button-nofocus.png</bordertexture>
+					<bordersize>4</bordersize>
+					<fadetime>-</fadetime>
+					<texture>black-back.png</texture>
+					<visible>Control.IsVisible(60) + Control.IsVisible(783)</visible>
+				</control> -->
+				<!-- <control type="button">
+					<posx>850</posx>
+					<posy>-50</posy>
+					<width>55</width>
+					<height>55</height>
+					<label>-</label>
+					<font>-</font>
+					<texturefocus>HomeHasSub3.png</texturefocus>
+					<texturenofocus>HomeHasSub2.png</texturenofocus>
+					<onleft>706</onleft>
+					<onright>500</onright>
+					<onup>600</onup>
+					<ondown>600</ondown>
+					<onclick>PageDown(2566)</onclick>
+					<onclick>Setfocus(1608)</onclick>
+					<visible>Control.IsVisible(2566) + Control.IsVisible(783)</visible>					
+				</control>
+				<control type="button">
+					<posx>460</posx>
+					<posy>-50</posy>
+					<width>55</width>
+					<height>55</height>
+					<label>-</label>
+					<font>-</font>
+					<texturefocus>HomeHasSub4.png</texturefocus>
+					<texturenofocus>HomeHasSubflip.png</texturenofocus>
+					<onleft>706</onleft>
+					<onright>500</onright>
+					<onup>600</onup>
+					<ondown>600</ondown>
+					<onclick>PageUp(2566)</onclick>
+					<onclick>Setfocus(1608)</onclick>
+					<visible>Control.IsVisible(2566) + Control.IsVisible(783)</visible>					
+				</control> -->
+				<control type="button" id="1608">
+					<description>fake button</description>
+					<posx>340r</posx>
+					<posy>240</posy>
+					<width>10</width>
+					<height>10</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<onclick>-</onclick>
+					<visible>Control.IsVisible(2566) + Control.IsVisible(783)</visible>
+				</control>
+
+				<control type="button" id="1610">					
+					<posx>652</posx>
+					<posy>-404</posy>
+					<width>100</width>
+					<height>56</height>
+					<font>font12</font>
+					<label>Back</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button1ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button1ViewAirBook_NF.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>					
+					<!-- <onclick>SetFocus(783)</onclick> -->
+					<!-- <onclick>Back</onclick> -->
+					<onclick>ParentDir</onclick>
+					<visible>!IsEmpty(ListItem.TVShowTitle) + Control.IsVisible(783)</visible>
+					<animation effect="fade" start="100" end="90" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>					
+				</control>
+				<control type="button" id="1610">					
+					<posx>652</posx>
+					<posy>-404</posy>
+					<width>100</width>
+					<height>56</height>
+					<font>font12</font>
+					<label>Back</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button1ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button2ViewAirBook_NN_Background.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>					
+					<!-- <onclick>SetFocus(783)</onclick> -->
+					<!-- <onclick>Back</onclick> -->
+					<onclick>ParentDir</onclick>
+					<visible>IsEmpty(ListItem.TVShowTitle) + Control.IsVisible(783)</visible>
+					<animation effect="fade" start="100" end="90" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>					
+				</control>
+				<control type="button" id="1611">					
+					<posx>860</posx>
+					<posy>-404</posy>
+					<width>100</width>
+					<height>56</height>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<label>Last</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button1ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button1ViewAirBook_NF.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>					
+					<onclick>SetFocus(783)</onclick>
+					<onclick>left</onclick>
+					<visible>!IsEmpty(ListItem.TVShowTitle) + Control.IsVisible(783)</visible>
+					<animation effect="fade" start="100" end="78" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>					
+				</control>
+				<control type="button" id="1611">					
+					<posx>860</posx>
+					<posy>-404</posy>
+					<width>100</width>
+					<height>56</height>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<label>Last</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button1ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button1ViewAirBook_NN_Background.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>					
+					<onclick>SetFocus(783)</onclick>
+					<onclick>left</onclick>
+					<visible>IsEmpty(ListItem.TVShowTitle) + Control.IsVisible(783)</visible>
+					<animation effect="fade" start="100" end="78" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>					
+				</control>
+				<control type="button" id="1612">					
+					<posx>990</posx>
+					<posy>-404</posy>
+					<width>100</width>
+					<height>56</height>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<label>Next</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button1ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button1ViewAirBook_NF.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>					
+					<onclick>SetFocus(783)</onclick>
+					<onclick>right</onclick>
+					<visible>!IsEmpty(ListItem.TVShowTitle) + Control.IsVisible(783)</visible>
+					<animation effect="fade" start="100" end="78" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>					
+				</control>
+				<control type="button" id="1612">					
+					<posx>990</posx>
+					<posy>-404</posy>
+					<width>100</width>
+					<height>56</height>
+					<font>font12</font>
+					<textcolor>white</textcolor>
+					<label>Next</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button1ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button1ViewAirBook_NN_Background.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>					
+					<onclick>SetFocus(783)</onclick>
+					<onclick>right</onclick>
+					<visible>IsEmpty(ListItem.TVShowTitle) + Control.IsVisible(783)</visible>
+					<animation effect="fade" start="100" end="78" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>					
+				</control>
+				<control type="button" id="1619">
+					<description>play this media file</description>
+					<posx>1144</posx>
+					<posy>140</posy>
+					<width>210</width>
+					<height>56</height>
+					<font>font12</font>
+					<textcolor>grey</textcolor>
+					<label>Make a smart Playlist</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button3ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button3ViewAirBook_NF.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>										
+					<onclick>ActivateWindow(SmartPlaylistEditor)</onclick>
+					<visible>Control.IsVisible(783) + [Container.Content(Episodes) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+					<animation effect="fade" start="100" end="78" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>
+				</control>
+				<control type="button" id="1618">
+					<description>play this media file</description>
+					<posx>1420</posx>
+					<posy>140</posy>
+					<width>210</width>
+					<height>56</height>
+					<font>font12</font>
+					<textcolor>grey</textcolor>
+					<label>Enter to my Playlists</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button3ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button3ViewAirBook_NF.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>										
+					<onclick>ActivateWindow(10025,&quot;special://videoplaylists/&quot;)</onclick>
+					<visible>Control.IsVisible(783) + [Container.Content(Episodes) | Container.Content(tvshows) | Container.Content(seasons)]</visible>
+					<animation effect="fade" start="100" end="78" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>
+				</control>
+				<control type="button" id="1615">
+					<description>play this media file</description>
+					<posx>860</posx>
+					<posy>140</posy>
+					<width>210</width>
+					<height>56</height>
+					<font>font12</font>
+					<textcolor>grey</textcolor>
+					<label>Enter to this TV Show</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button3ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button3ViewAirBook_NF.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<enable>!IsEmpty(ListItem.Title)</enable>
+					<onclick>SetFocus(783)</onclick>
+					<onclick>Select</onclick>
+					<visible>Control.IsVisible(783) + Container.Content(tvshows)</visible>
+					<animation effect="fade" start="100" end="48" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>
+				</control>
+				<control type="button" id="1615">
+					<description>play this media file</description>
+					<posx>860</posx>
+					<posy>140</posy>
+					<width>210</width>
+					<height>56</height>
+					<font>font12</font>
+					<textcolor>grey</textcolor>
+					<label>Enter to this Season</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button3ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button3ViewAirBook_NF.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<enable>!IsEmpty(ListItem.Title)</enable>
+					<onclick>SetFocus(783)</onclick>
+					<onclick>Select</onclick>
+					<visible>Control.IsVisible(783) + Container.Content(seasons)</visible>
+					<animation effect="fade" start="100" end="48" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>
+				</control>
+				<control type="button" id="1615">
+					<description>play this media file</description>
+					<posx>860</posx>
+					<posy>140</posy>
+					<width>210</width>
+					<height>56</height>
+					<font>font12</font>
+					<textcolor>grey</textcolor>
+					<label>Play this Media File</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button3ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button3ViewAirBook_NF.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<enable>!IsEmpty(ListItem.Title)</enable>
+					<onclick>SetFocus(783)</onclick>
+					<onclick>Select</onclick>
+					<visible>Control.IsVisible(783) + Container.Content(episodes)</visible>
+					<animation effect="fade" start="100" end="48" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>
+				</control>
+				<!-- <control type="button" id="1628">
+					<description>play this media file</description>
+					<posx>600</posx>
+					<posy>-88</posy>
+					<width>80</width>
+					<height>46</height>
+					<font>font12</font>
+					<label>Play</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button1ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button1aViewAirBook_NF.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>					
+					<onclick>SetFocus(783)</onclick>
+					<onclick>Select</onclick>
+					<visible>Control.IsVisible(783) + Control.HasFocus(783) + Container.Content(episodes)</visible>
+					<animation effect="fade" start="100" end="48" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>
+				</control> -->
+				<control type="button" id="1628">
+					<description>select enter play focused media file</description>
+					<posx>526</posx>
+					<posy>-228</posy>
+					<width>224</width>
+					<height>314</height>
+					<font>font13</font>
+					<textcolor>grey</textcolor>
+					<label>-</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>black_back_select.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>
+					<!-- <enable>!IsEmpty(ListItem.Title)</enable> -->
+					<onclick>SetFocus(783)</onclick>
+					<onclick>Select</onclick>
+					<visible>Control.IsVisible(783) + !System.IdleTime(2)</visible>
+					<animation effect="fade" start="100" end="88" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="80" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation> 					
+					<onfocus>Setfocus(1608)</onfocus>
+				</control>
+
+				<control type="button" id="1613">					
+					<posx>547</posx>
+					<posy>-212</posy>
+					<width>86</width>
+					<height>52</height>
+					<font>font12</font>
+					<textcolor>grey</textcolor>
+					<label>Context</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button1ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button1ViewAirBook_NF.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>					
+					<onclick>SetFocus(783)</onclick>
+					<onclick>ContextMenu</onclick>
+					<visible>Control.IsVisible(783) + !System.IdleTime(1)</visible>
+					<animation effect="fade" time="800">VisibleChange</animation>
+					<animation effect="fade" start="100" end="0" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>					
+				</control>
+				<control type="button" id="1614">					
+					<posx>645</posx>
+					<posy>-212</posy>
+					<width>84</width>
+					<height>52</height>
+					<font>font12</font>
+					<textcolor>grey</textcolor>
+					<label>Info</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button1ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button1ViewAirBook_NF.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>					
+					<onclick>SetFocus(783)</onclick>
+					<onclick>info</onclick>
+					<visible>Control.IsVisible(783) + !System.IdleTime(1)</visible>
+					<animation effect="fade" time="800">VisibleChange</animation>
+					<animation effect="fade" start="100" end="0" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>					
+				</control>
+				<control type="button" id="1615">					
+					<posx>547</posx>
+					<posy>22</posy>
+					<width>86</width>
+					<height>52</height>
+					<font>font12</font>
+					<textcolor>grey</textcolor>
+					<label>Queue</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button1ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button1ViewAirBook_NF.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>					
+					<onclick>SetFocus(783)</onclick>
+					<onclick>Queue</onclick>
+					<visible>Control.IsVisible(783) + !System.IdleTime(1)</visible>
+					<animation effect="fade" time="800">VisibleChange</animation>
+					<animation effect="fade" start="100" end="0" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>					
+				</control>
+				<control type="button" id="1616">					
+					<posx>645</posx>
+					<posy>22</posy>
+					<width>84</width>
+					<height>52</height>
+					<font>font12</font>
+					<textcolor>grey</textcolor>
+					<label>Playlist</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<texturefocus>Button1ViewAirBook_FO.png</texturefocus>
+					<texturenofocus>Button1ViewAirBook_NF.png</texturenofocus>
+					<onleft>605</onleft>
+					<onright>610</onright>
+					<onup>300</onup>
+					<ondown>200</ondown>					
+					<onclick>SetFocus(783)</onclick>
+					<onclick>ActivateWindow(VideoPlaylist)</onclick>
+					<visible>Control.IsVisible(783) + !System.IdleTime(1)</visible>
+					<animation effect="fade" time="800">VisibleChange</animation>
+					<animation effect="fade" start="100" end="0" time="200" condition="IsEmpty(ListItem.Title)">Conditional</animation>
+					<animation type="focus" reversible="false">
+						<effect type="zoom" start="100" end="140" center="auto" easing="in" tween="back" time="460" />
+						<effect type="fade" start="0" end="90" time="420" />
+						<effect type="fade" start="100" end="0" delay="460" time="260" />							
+					</animation>
+					<onfocus>Setfocus(1608)</onfocus>					
+				</control>
+				<control type="label">
+					<posx>1666</posx>
+					<posy>-400</posy>
+					<width>250</width>
+					<height>55</height>
+					<font>font13caps</font>
+					<textcolor>grey</textcolor>
+					<scroll>true</scroll>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>A i r   b o o k</label>
+					<visible>!IsEmpty(ListItem.TVShowTitle) + Control.IsVisible(783) + Container.Content(TVShows)</visible>
+				</control>
+				<control type="label">
+					<posx>1666</posx>
+					<posy>-400</posy>
+					<width>250</width>
+					<height>55</height>
+					<font>font13caps</font>
+					<textcolor>grey</textcolor>
+					<scroll>true</scroll>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>T V   S H O W S</label>
+					<visible>IsEmpty(ListItem.TVShowTitle) + Control.IsVisible(783) + Container.Content(TVShows)</visible>
+				</control>
+				<control type="label">
+					<posx>1670</posx>
+					<posy>-400</posy>
+					<width>450</width>
+					<height>55</height>
+					<font>font13caps</font>
+					<textcolor>grey6</textcolor>
+					<scroll>true</scroll>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>[B][UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE][/B]</label>
+					<visible>!IsEmpty(ListItem.TVShowTitle) + Control.IsVisible(783) + Container.Content(Seasons)</visible>
+				</control>
+				<control type="label">
+					<posx>1666</posx>
+					<posy>-400</posy>
+					<width>250</width>
+					<height>55</height>
+					<font>font13caps</font>
+					<textcolor>grey</textcolor>
+					<scroll>true</scroll>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>S E A S O N S</label>
+					<visible>IsEmpty(ListItem.TVShowTitle) + Control.IsVisible(783) + Container.Content(Seasons)</visible>
+				</control>
+				<control type="label">
+					<posx>1666</posx>
+					<posy>-400</posy>
+					<width>250</width>
+					<height>55</height>
+					<font>font13caps</font>
+					<textcolor>grey</textcolor>
+					<scroll>true</scroll>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>E P I S O D E S</label>
+					<visible>IsEmpty(ListItem.TVShowTitle) + Control.IsVisible(783) + Container.Content(Episodes)</visible>
+				</control>
+				<!-- <control type="label">
+					<posx>1670</posx>
+					<posy>-400</posy>
+					<width>450</width>
+					<height>55</height>
+					<font>font13caps</font>
+					<textcolor>grey6</textcolor>
+					<scroll>true</scroll>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>[B][UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE][/B]</label>
+					<visible>!IsEmpty(ListItem.TVShowTitle) + Control.IsVisible(783) + Container.Content(Episodes)</visible>
+				</control> -->
+
+
+
+			</control>
+			<!-- touch end -->
+		</control>
+
+
+
+	</include>
+</includes>

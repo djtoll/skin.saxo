@@ -1,7 +1,7 @@
 <window id="25">
 	<defaultcontrol always="true">50</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<views>50,51,550,58,59,57,500,55,56,53,54</views>
+	<views>50,51,550,783,784,58,59,57,500,55,56,53,54</views>
 	<controls>
 		<include>CommonBackground</include>
 		<control type="image">
@@ -49,6 +49,8 @@
 				<include>VideoThumbnailView</include> <!-- view id = 53 -->
 				<include>WideIconView</include> <!-- view id = 54 -->
 				<include>AddonInfoView</include>  <!-- view id = 550 -->
+				<include>FanartInfoTvEpisodeFlower</include> <!-- view id = 783 -->
+				<include>FanartInfoMoviesFlower</include> <!-- view id = 784 -->
 			</control>
 			<control type="grouplist">
 				<description>Media Codec Flagging Images</description>
@@ -221,7 +223,7 @@
 					<ondown>603</ondown>
 					<visible>false</visible>
 				</control>
-				
+
 				<control type="button" id="611">
 					<description>Fake Button to fix Player Controls Navigation</description>
 					<onup>607</onup>
@@ -267,7 +269,7 @@
 		<include>BehindDialogFadeOut</include>
 		<include>CommonNowPlaying_Controls</include>
 
-<!-- Test code for the flagging Can stay until all codecs done
+		<!-- Test code for the flagging Can stay until all codecs done
 
 		<control type="label">
 			<posy>10</posy>
